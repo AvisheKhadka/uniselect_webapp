@@ -8,16 +8,10 @@ use Spatie\Sluggable\SlugOptions;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
-class University extends Model implements HasMedia
+class Course extends BaseModel implements HasMedia
 {
     use HasSlug;
     use InteractsWithMedia;
-
-    protected $guarded = ['id'];
-
-    public function country(){
-        return $this->belongsTo(Country::class,'country_id');
-    }
 
     public function getSlugOptions(): SlugOptions
     {
